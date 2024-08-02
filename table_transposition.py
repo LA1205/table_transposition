@@ -27,3 +27,5 @@ for index, row in df.iterrows():
 # 保存处理后的CSV文件
 newfile_path = file_path[:-4] + '_transposition' + file_path[-4:]
 new_df.to_csv(newfile_path, index=False, encoding='ANSI')
+
+print("处理完成, 结果已保存到: " + newfile_path)
