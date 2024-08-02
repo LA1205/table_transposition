@@ -1,10 +1,13 @@
 import pandas as pd
 
+#指定CSV文件的路径
+file_path = r'D:\BaiduSyncdisk\Work_Space\KB\Projetcs\hotan\cele\2013\fanghulin\table_11.csv'
+
 # 读取CSV文件
-df = pd.read_csv('your_file.csv')
+df = pd.read_csv(file_path)
 
 # 定义要处理的列
-column_to_check = 'your_column_name'
+column_to_check = 'x'
 
 # 创建一个新的DataFrame来存储结果
 new_df = pd.DataFrame(columns=df.columns)
@@ -28,4 +31,5 @@ for index, row in df.iterrows():
         new_df = new_df.append(row, ignore_index=True)
 
 # 保存处理后的CSV文件
-new_df.to_csv('processed_file.csv', index=False)
+newfile_path = file_path[:-4] + '_transposition' + file_path[-4:]
+new_df.to_csv(newfile_path, index=False)
